@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crosszorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&family=Roboto:wght@400;900&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1>Contact Us</h1>
+        <form action="/" method="get">
+            <section>
+                <h2>How can we help you?</h2>
+
+                <ul>
+                    <li>
+                        <label for="uname">Your Name</label>
+                        <input type="text" name="u-name" id="uname">
+                    </li>
+                    <li>
+                        <label for="umail">Your E-mail Address</label>
+                        <input type="email" name="u-mail" id="umail">
+                    </li>
+                    <li>
+                        <label for="uphone">Your Phone Number</label>
+                        <input type="number" name="u-phone" id="uphone">
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li>
+                        <label for="umsg">Your Message</label>
+                        <textarea name="u-msg" id="umsg" cols="30" rows="5"></textarea>
+                    </li>
+                    <li>
+                        <label for="ufind">How did you find us?</label>
+                        <select name="u-find" id="ufind">
+                            <option value="0">Web Search</option>
+                            <option value="1">Word Of Mouth</option>
+                            <option value="2">Other</option>
+                        </select>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>How should we reply?</h2>
+                <ul>
+                    <li class="form-control-inline">
+                        <input type="checkbox" id="reply-call"  name="reply" value="call">
+                        <label for="reply-call">Call Me</label>
+                    </li>
+                    <li class="form-control-inline">
+                        <input type="checkbox" id="reply-mail"  name="reply" value="mail">
+                        <label for="reply-mail">E-mail Me</label>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- <br> -->
+
+            <section id="terms">
+                <div class="form-control-inline">
+                    <input type="radio" id="agree" name="agree">
+                    <label for="agree">I agree to the terms and conditions.</label>
+                </div>
+            </section>
+
+            <section>
+                <ul id="btns">
+                    <li>
+                        <button type="reset" id="reset-btn">Clear</button>
+                    </li>
+                    <li>
+                        <button id="submit-btn">Submit</button>
+                    </li>
+                </ul>
+            </section>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,91 @@
+html{
+    font-family: "Ysabeau", sans-serif;
+    background-color: rgb(138, 186, 184);
+    color: rgb(49, 49, 49);
+}
+
+h1{
+    margin: 2rem;
+    text-align: center;
+    color: black;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+form{
+    width: 35%;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px  rgba(0, 0, 0, .5);
+}
+
+label{
+    display: block;
+    margin: 0.5rem 0;
+}
+
+input,
+textarea,
+select{
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    font: inherit;
+    padding: 0.25rem;
+    color: rgb(69, 114, 100);
+}
+
+input:focus,
+textarea:focus{
+    background-color: rgb(216, 216, 216);
+    color: rgb(73, 113, 100);
+}
+
+.form-control-inline{
+    display: flex;
+}
+
+.form-control-inline input{
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+#terms{
+    padding: 0.5rem 0;
+}
+
+#btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#btns li{
+    padding: 0.3rem;
+}
+
+button{
+    /* padding: 2px; */
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+}
+
+#reset-btn:hover{
+    background-color: rgb(167, 203, 197);
+}
+
+#submit-btn{
+    background-color: rgb(135, 178, 171);
+}
+
+#submit-btn:hover{
+    background-color: rgb(167, 203, 197);
+    color: rgb(54, 53, 53);
+}
