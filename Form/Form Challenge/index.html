@@ -20,15 +20,15 @@
                 <ul>
                     <li>
                         <label for="uname">Your Name</label>
-                        <input type="text" name="u-name" id="uname">
+                        <input type="text" name="u-name" id="uname" required>
                     </li>
                     <li>
                         <label for="umail">Your E-mail Address</label>
-                        <input type="email" name="u-mail" id="umail">
+                        <input type="email" name="u-mail" id="umail" required>
                     </li>
                     <li>
                         <label for="uphone">Your Phone Number</label>
-                        <input type="number" name="u-phone" id="uphone">
+                        <input type="number" name="u-phone" id="uphone" required>
                     </li>
                 </ul>
             </section>
@@ -52,7 +52,7 @@
 
             <section>
                 <h2>How should we reply?</h2>
-                <ul>
+                <ul required>
                     <li class="form-control-inline">
                         <input type="checkbox" id="reply-call"  name="reply" value="call">
                         <label for="reply-call">Call Me</label>
@@ -68,7 +68,7 @@
 
             <section id="terms">
                 <div class="form-control-inline">
-                    <input type="radio" id="agree" name="agree">
+                    <input type="checkbox" id="agree" name="agree" required>
                     <label for="agree">I agree to the terms and conditions.</label>
                 </div>
             </section>
