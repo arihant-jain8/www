@@ -13,7 +13,7 @@
 <body>
     <main>
         <h1>Contact Us</h1>
-        <form action="/" method="get">
+        <form action="/Form/Form Challenge" method="get">
             <section>
                 <h2>How can we help you?</h2>
 
@@ -28,43 +28,41 @@
                     </li>
                     <li>
                         <label for="uphone">Your Phone Number</label>
-                        <input type="number" name="u-phone" id="uphone" required>
+                        <input type="tel" name="u-phone" id="uphone" required minlength="10">
+                    </li>
+                    <li>
+                        <label for="umsg">Your Message</label>
+                        <textarea name="u-msg" id="umsg" cols="30" rows="5" minlength="10" maxlength="200" placeholder="10 to 200 characters"></textarea>
                     </li>
                 </ul>
             </section>
 
             <section>
-                <ul>
-                    <li>
-                        <label for="umsg">Your Message</label>
-                        <textarea name="u-msg" id="umsg" cols="30" rows="5"></textarea>
-                    </li>
-                    <li>
-                        <label for="ufind">How did you find us?</label>
-                        <select name="u-find" id="ufind">
-                            <option value="0">Web Search</option>
-                            <option value="1">Word Of Mouth</option>
-                            <option value="2">Other</option>
-                        </select>
-                    </li>
-                </ul>
+                <label for="channel">How did you find us?</label>
+                <select name="channel" id="channel">
+                    <option value="search">Web Search</option>
+                    <option value="word-of-mouth">Word Of Mouth</option>
+                    <option value="other">Other</option>
+                </select>
             </section>
 
             <section>
                 <h2>How should we reply?</h2>
-                <ul required>
+                <ul>
                     <li class="form-control-inline">
-                        <input type="checkbox" id="reply-call"  name="reply" value="call">
-                        <label for="reply-call">Call Me</label>
+                        <input type="radio" id="reply-phone"  name="reply" value="phone" required>
+                        <label for="reply-phone">Call Me</label>
                     </li>
                     <li class="form-control-inline">
-                        <input type="checkbox" id="reply-mail"  name="reply" value="mail">
+                        <input type="radio" id="reply-mail"  name="reply" value="mail" required>
                         <label for="reply-mail">E-mail Me</label>
+                    </li>
+                    <li class="form-control-inline">
+                        <input type="radio" id="reply-none" name="reply" value="noen" required>
+                        <label for="reply-none">Don't Reply</label>
                     </li>
                 </ul>
             </section>
-
-            <!-- <br> -->
 
             <section id="terms">
                 <div class="form-control-inline">
@@ -73,15 +71,9 @@
                 </div>
             </section>
 
-            <section>
-                <ul id="btns">
-                    <li>
-                        <button type="reset" id="reset-btn">Clear</button>
-                    </li>
-                    <li>
-                        <button id="submit-btn">Submit</button>
-                    </li>
-                </ul>
+            <section class="button-container">
+                <button type="reset" id="reset-btn">Clear</button>
+                <button id="submit-btn">Submit</button>
             </section>
         </form>
     </main>

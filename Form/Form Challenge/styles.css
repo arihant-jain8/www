@@ -28,6 +28,8 @@ form{
 label{
     display: block;
     margin: 0.5rem 0;
+    color: rgb(30, 55, 55);
+    font-weight: bold;
 }
 
 input,
@@ -41,9 +43,13 @@ select{
     color: rgb(69, 114, 100);
 }
 
+textarea{
+    resize: none;
+}
+
 input:focus,
 textarea:focus{
-    background-color: rgb(216, 216, 216);
+    background-color: rgb(231, 236, 236);
     color: rgb(73, 113, 100);
 }
 
@@ -56,18 +62,17 @@ textarea:focus{
     margin-right: 0.5rem;
 }
 
+.form-control-inline label{
+    margin: 0;
+    margin-left: 0.5rem;
+}
+
 #terms{
     padding: 0.5rem 0;
 }
 
-#btns{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-
-#btns li{
-    padding: 0.3rem;
+.button-container{
+    text-align: right;
 }
 
 button{
@@ -75,6 +80,8 @@ button{
     margin-top: 1rem;
     padding: 0.5rem 1.5rem;
     border-radius: 5px;
+    border: 1px solid rgb(181, 185, 188);
+    cursor: pointer;
 }
 
 #reset-btn:hover{
