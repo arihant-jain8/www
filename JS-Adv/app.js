@@ -54,4 +54,11 @@ let firsth1ele = document.querySelector('h1');
 
 // 2. Remove it!
 firsth1ele.remove();
-firsth1ele.parentElement.removeChild(firsth1ele); // for older browsers
+// firsth1ele.parentElement.removeChild(firsth1ele); // for older browsers
+
+// MOVE EXISTING ELEMENTS
+firstPara.parentElement.append(firstPara);
+
+// innerHTML
+console.log(firstPara.innerHTML);
+firstPara.innerHTML = 'Hi! This is <strong>important!</strong>';
