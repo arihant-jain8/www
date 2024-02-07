@@ -30,3 +30,28 @@ anchorElement.href = 'https://youtube.com';
 // document.getElementsByClassName('some-css-class'): Selects all HTML elements that have the provided CSS class
 
 // document.getElementsByTagName('tag'): Selects all HTML elements that are of the provided HTML tag type
+
+
+// ADD AN ELEMENT
+// 1. Create a new Element
+let newAnchorEle = document.createElement('a'); // just created not part of the dom
+newAnchorEle.href = 'https://youtube.com'
+// textContent can also be used
+newAnchorEle.innerText = '\nYouTube';
+// newAnchorEle.textContent = 'Youtube';
+
+// 2. Get access to the parent element that should hold the new element
+let firstPara = document.querySelector('p');
+
+// 3. Insert the new element into the parent element content
+firstPara.appendChild(newAnchorEle);
+
+
+// REMOVE AN ELEMENT
+// 1. Select element that should be removed
+// let firsth1ele = document.body.firstElementChild;
+let firsth1ele = document.querySelector('h1');
+
+// 2. Remove it!
+firsth1ele.remove();
+firsth1ele.parentElement.removeChild(firsth1ele); // for older browsers
