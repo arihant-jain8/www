@@ -8,17 +8,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/overlays.css">
+    <link rel="stylesheet" href="styles/configuration.css">
 </head>
 <body>
-    <header>
-        <h1 id="main-header">Play Tic, Tac, Toe</h1>
+    <div id="backdrop"></div>
+    <header id="main-header">
+        <h1>Play Tic, Tac, Toe</h1>
         <p>Built with HTML, CSS, JS and - of course - lots of love♥</p>
     </header>
+
     <main>
-        <aside>
+        <aside class="modal" id="config-overlay">
             <h2>Choose your name</h2>
+
             <form>
-                <div>
+                <div class="form-control">
                     <label for="playername">Player name</label>
                     <input type="text" name="playername" id="playername">
                 </div>
@@ -28,6 +33,7 @@
                 </div>
             </form>
         </aside>
+
         <section id="game-config">
             <ol>
                 <li>
