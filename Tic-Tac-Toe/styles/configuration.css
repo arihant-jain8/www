@@ -25,6 +25,17 @@
     border-radius: 5px;
 }
 
+/* If given input contains errors */
+.error label{
+    color: rgb(136, 2, 2);
+}
+
+.error input{
+    border-color: rgb(136, 2, 2);
+    color: rgb(136, 2, 2);
+    background-color: rgb(253, 219, 219);
+}
+
 /* For player name area on the landing page */
 #game-config{
     width: 90%;

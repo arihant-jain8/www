@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="styles/overlays.css">
     <link rel="stylesheet" href="styles/configuration.css">
     <link rel="stylesheet" href="styles/game.css">
+    <script src="scripts/config.js" defer></script>
+    <script src="scripts/game.js" defer></script>
+    <script src="scripts/app.js" defer></script> <!-- we are gonna use things defined in config and game js files to start the app.js files thats why app.js files is in the last-->
 </head>
 <body>
     <div id="backdrop"></div> <!-- only here for styling purpose -->
@@ -26,10 +29,11 @@
             <form>
                 <div class="form-control">
                     <label for="playername">Player name</label>
-                    <input type="text" name="playername" id="playername">
+                    <input type="text" name="playername" id="playername" required>
                 </div>
+                <p id="config-errors" style="margin: 0;"></p>
                 <div>
-                    <button type="button" class="btn btn-alt">Cancel</button>
+                    <button type="reset" class="btn btn-alt" id="cancel-config-btn">Cancel</button>
                     <button type="submit" class="btn">Confirm</button>
                 </div>
             </form>
@@ -38,23 +42,23 @@
         <section id="game-config">
             <ol>
                 <li>
-                    <article>
+                    <article id="player-1-data">
                         <h2>Player 1</h2>
                         <h3>PLAYER NAME</h3>
                         <p class="player-symbol">X</p>
-                        <button class="btn btn-alt">Edit</button>
+                        <button class="btn btn-alt" id="edit-p1-btn" data-playerid="1">Edit</button>
                     </article>
                 </li>
                 <li>
-                    <article>
+                    <article id="player-2-data">
                         <h2>Player 2</h2>
                         <h3>PLAYER NAME</h3>
                         <p class="player-symbol">O</p>
-                        <button class="btn btn-alt">Edit</button>
+                        <button class="btn btn-alt" id="edit-p2-btn" data-playerid="2">Edit</button>
                     </article>
                 </li>
             </ol>
-            <button class="btn">Start New Game</button>
+            <button class="btn" id="start-game-btn">Start New Game</button>
         </section>
 
         <section id="active-game">
