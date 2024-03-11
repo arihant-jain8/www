@@ -1,0 +1,39 @@
+body{
+    font-family: sans-serif;
+    text-align: center;
+}
+
+#header nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#carousel-example{
+    width: 100%;
+    max-width: 50rem;
+    height: 30rem;
+    margin: 4rem auto;
+}
+
+#carousel-example img{
+    height: 30rem;
+    object-fit: cover;
+}
+
+#newsletter-signup{
+    max-width: 30rem;
+    margin: 4rem auto;
+}
+
+section{
+    width: 100%;
+    max-width: 50rem;
+    margin: 10rem auto;
+}
+
+#main-image{
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
+}
