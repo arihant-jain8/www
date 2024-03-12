@@ -1,3 +1,4 @@
+// express
 const fs = require('fs');
 const path = require('path');
 
@@ -55,6 +56,7 @@ app.get('/users', function(req, res){
 app.listen(6969);
 
 
+// only node
 
 // with http
 // const http = require('http');
