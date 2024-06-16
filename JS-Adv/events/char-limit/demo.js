@@ -27,7 +27,8 @@ function updateRemainingChar(event){
     }
     
     else{
-        
+        remainingCharsElement.classList.remove('warning');
+        productNameEle.classList.remove('warning');
     }
 }
 

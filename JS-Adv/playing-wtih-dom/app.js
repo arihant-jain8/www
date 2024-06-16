@@ -37,7 +37,7 @@ anchorElement.href = 'https://youtube.com';
 let newAnchorEle = document.createElement('a'); // just created not part of the dom
 newAnchorEle.href = 'https://youtube.com'
 // textContent can also be used
-newAnchorEle.innerText = '\nYouTube';
+newAnchorEle.innerText = 'YouTube';
 // newAnchorEle.textContent = 'Youtube';
 
 // 2. Get access to the parent element that should hold the new element
