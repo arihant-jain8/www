@@ -6,6 +6,7 @@ const gameData = [
 let editedPlayer = 0;
 let activePlayer = +false;
 let turnCount = 1;
+let isGameOver = false;
 
 const players = [
     {
