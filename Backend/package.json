@@ -4,7 +4,7 @@
   "description": "Getting started with node and express",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -14,9 +14,5 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.3"
-  },
-  "bugs": {
-    "url": "https://github.com/arihant-jain8/www/issues"
-  },
-  "homepage": "https://github.com/arihant-jain8/www#readme"
+  }
 }
