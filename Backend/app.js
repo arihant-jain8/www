@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended: false}));
 
 app.get('/', function(req, res){
     // res.send('<h1>BILLIIII</h1>')
-    res.send('<form action = "/store-user" method = "POST"><label>Name</label><input type="text" name="uname"><button>Submit</button></form>')
+    res.send('<form action = "/store-user" method = "POST"><label>Your Name: </label><input type="text" name="uname"><button>Submit</button></form>')
 });
 
 app.get('/currenttime', function(req, res){
