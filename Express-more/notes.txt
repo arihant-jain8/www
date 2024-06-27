@@ -30,3 +30,29 @@ const fileData = fs.readFileSync(filePath); //this will be normal text not a JS 
 const existingUsers = JSON.parse(fileData); // parsing the normal text to JS object
 
 fs.writeFileSync(filePath, JSON.stringify(existingUsers)); // cannot write existingUsers. Need to write normal text :: stringify
+
+// templating engine
+// v this is to let expess know where it will find our template files, file path for views/templates
+app.set("views", path.join(__dirname, "views"));
+// view option -> tells express that we want to use special engine, ejs -> name of the engine
+app.set("view engine", "ejs");
+
+by using this we dont need to res.send(filePath)
+we can just use res.render(fileName) -> for parsing an html file
+
+in .ejs files, we can use 
+<% code %>
+to use any js code inside the ejs(html) file
+
+<%= varName %> -> is used to insert single value
+
+to use variables from backend in the html(ejs) file
+we got to add those variables in the req.render() function as parameters
+eg: res.render('restaurants', {numOfRestaurants: storedRestaurants.length, restaurants: storedRestaurants});
+
+To break our big html files to smaller more-managable files
+<%- include('filepath', {var: data}) %>
+( {var: data} is optional and filepath without extension) 
+<%- %> loads and parses the given files like html files only
+
+however <%= %> parses like normal text => acts as a security mechanism as well. prevents from scripting
