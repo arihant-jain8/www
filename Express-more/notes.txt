@@ -1,0 +1,32 @@
+FOR AUTOMATIC SERVER RESTART
+add 
+"scripts": {
+    "start": "nodemon app.js"
+},
+
+in the package.json and type -> npm start (to directly open app.js)
+-> so that server restarts on its own everytime we save any changes
+
+or just add "nodemon"
+and type npm start <filename>
+
+
+app.use(express.static('public')); 
+// middleware to load static files like css and js
+// We're telling Express that for every incoming request, it should check if
+// it's a request to a file that can be found here in this public folder.
+// And if it is, then the file will be returned as a response.
+// If it's not, the request will be forwarded to our other routes.
+// And if there, we also have no route that handles the request, the request will fail.
+
+
+const fs = require('fs'); // package for file system
+const path = require('path'); // package to construct path
+
+// to parse incoming request data
+app.use(express.urlencoded({extended: false})); // middleware function to see if the req has any data and parse that
+
+const fileData = fs.readFileSync(filePath); //this will be normal text not a JS obj or array
+const existingUsers = JSON.parse(fileData); // parsing the normal text to JS object
+
+fs.writeFileSync(filePath, JSON.stringify(existingUsers)); // cannot write existingUsers. Need to write normal text :: stringify

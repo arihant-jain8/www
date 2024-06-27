@@ -1,44 +1,67 @@
-const fs = require('fs');
 const path = require('path');
+const fs = require('fs');
 
 const express = require('express');
 
 const app = express();
 
-app.use(express.static('public')); // to open and load static files like css and js files
+// templating engine
+// v this is to let expess know where it will find our template files, file path for views/templates
+app.set("views", path.join(__dirname, "views"));
+// view option -> tells express that we want to use special engine, ejs -> name of the engine
+app.set("view engine", "ejs");
+
+// middleware to load static files like css and js
+// We're telling Express that for every incoming request, it should check if
+// it's a request to a file that can be found here in this public folder.
+// And if it is, then the file will be returned as a response.
+// If it's not, the request will be forwarded to our other routes.
+// And if there, we also have no route that handles the request, the request will fail.
+app.use(express.static('public'));
+app.use(express.urlencoded({extended: false}));
 
 app.get('/', function(req, res){
-    res.send('hello dumbo');
-});
-
-app.get('/index', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'index.html');
-    res.sendFile(htmlFilePath);
+    // after adding views we can just use render function to render the ejs templates
+    // const htmlPath = path.join(__dirname, "views", "index.html");
+  	// res.sendFile(htmlPath);
+	res.render('index');
 });
 
 app.get('/restaurants', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'restaurants.html');
-    res.sendFile(htmlFilePath);
+    // const htmlPath = path.join(__dirname, 'views', 'restaurants.html');
+    // res.sendFile(htmlPath);
+	const filePath = path.join(__dirname, 'data', 'restaurants.json');
+    
+    const fileData = fs.readFileSync(filePath);
+    const storedRestaurants = JSON.parse(fileData);
+
+	res.render('restaurants', {numOfRestaurants: storedRestaurants.length});
 });
 
 app.get('/recommend', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'recommend.html');
-    res.sendFile(htmlFilePath);
+	res.render('recommend');
 });
 
-app.get('/restaurants', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'restaurants.html');
-    res.sendFile(htmlFilePath);
+app.post('/recommend', function(req, res){
+    const restaurant = req.body;
+    const filePath = path.join(__dirname, 'data', 'restaurants.json');
+    
+    const fileData = fs.readFileSync(filePath);
+    const storedRestaurants = JSON.parse(fileData);
+
+    storedRestaurants.push(restaurant);
+
+    fs.writeFileSync(filePath, JSON.stringify(storedRestaurants));
+
+    res.redirect('/confirm');
 });
 
 app.get('/confirm', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'confirm.html');
-    res.sendFile(htmlFilePath);
+    res.render('confirm');
 });
 
 app.get('/about', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'about.html');
-    res.sendFile(htmlFilePath);
+    res.render('about');
 });
 
 app.listen(6969);
