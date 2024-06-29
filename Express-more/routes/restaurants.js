@@ -52,7 +52,7 @@ router.get('/restaurants/:rId', function(req, res){ // domain/restaurants/r1
             return res.render('restaurant-detail', {restaurant: restaurant}); // return - to stop function execution
         }
     }
-
+    //
     res.status(404).render('404');
 });
 
