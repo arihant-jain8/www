@@ -1,1 +1,18 @@
-[{"name":"misc","address":"delhi","cuisine":"spanish","website":"https://delhires.com","description":"asdas"}]
+[
+    {
+        "id": "r1",
+        "name": "misc",
+        "address": "delhi",
+        "cuisine": "spanish",
+        "website": "https://delhires.com",
+        "description": "asdas"
+    },
+    {
+        "name": "Anu Ashu Dhaba",
+        "address": "Tri Nagar",
+        "cuisine": "Dal Chawal",
+        "website": "https://anuashu.com",
+        "description": "because anu ashu bhot cute hain",
+        "id": "bdd83900-b350-4c9a-a3b0-21668da6bde0"
+    }
+]

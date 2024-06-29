@@ -56,3 +56,34 @@ To break our big html files to smaller more-managable files
 <%- %> loads and parses the given files like html files only
 
 however <%= %> parses like normal text => acts as a security mechanism as well. prevents from scripting
+
+const uuid = require('uuid'); // gives a method to randomly generate unique id
+
+
+// middleware to catch all the requests that are not handled above
+// it will kick in when we have a req that is not handled by any other routes
+app.use(function(req, res){
+    res.render('404');
+});
+// added just before app.listen(port); statement
+
+// added after the above route ^
+// special error handling function
+// to handle server side errors
+app.use(function(error, req, res, next){
+    res.render('500');
+});
+
+// status codes
+// 200 - req parsed successfully, a resp can be generated and sent 
+// 404 - client side error. requested resource/link was not found.
+// 401 - client side error. client(user) is not authorized to access the requested resource/link
+// 500 - server-side error. req was valid.
+
+// server.listen(3000);
+// amazon.com => send a req to amazon.com
+// common port to send unencrypted req
+// amazon.com:80
+// :443 uses ssl
+
+res.status(404).render('404'); // to let the browser know that its an error status

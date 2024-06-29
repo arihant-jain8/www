@@ -1,7 +1,13 @@
 const path = require('path');
-const fs = require('fs');
 
 const express = require('express');
+// const uuid = require('uuid'); // gives a method to randomly generate unique id
+// ^ shifted to restaurants.js in util
+
+// import defualt routes
+const defaultRoutes = require('./routes/default');
+// import restaurants routes
+const restaurantRoutes = require('./routes/restaurants');
 
 const app = express();
 
@@ -20,49 +26,26 @@ app.set("view engine", "ejs");
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 
-app.get('/', function(req, res){
-    // after adding views we can just use render function to render the ejs templates
-    // const htmlPath = path.join(__dirname, "views", "index.html");
-  	// res.sendFile(htmlPath);
-	res.render('index');
+// using default routes
+app.use('/', defaultRoutes);
+// using restaurant routes
+app.use('/', restaurantRoutes);
+
+app.get('/404', function(req, res){
+    res.render('404');
 });
 
-app.get('/restaurants', function(req, res){
-    // const htmlPath = path.join(__dirname, 'views', 'restaurants.html');
-    // res.sendFile(htmlPath);
-	const filePath = path.join(__dirname, 'data', 'restaurants.json');
-    
-    const fileData = fs.readFileSync(filePath);
-    const storedRestaurants = JSON.parse(fileData);
 
-	// this is to send js variable to our "ejs" files
-	res.render('restaurants', {numOfRestaurants: storedRestaurants.length, restaurants: storedRestaurants});
+// middleware to catch all the requests that are not handled above
+// it will kick in when we have a req that is not handled by any other routes
+app.use(function(req, res){
+    res.status(404).render('404');
 });
 
-app.get('/recommend', function(req, res){
-	res.render('recommend');
-});
-
-app.post('/recommend', function(req, res){
-    const restaurant = req.body;
-    const filePath = path.join(__dirname, 'data', 'restaurants.json');
-    
-    const fileData = fs.readFileSync(filePath);
-    const storedRestaurants = JSON.parse(fileData);
-
-    storedRestaurants.push(restaurant);
-
-    fs.writeFileSync(filePath, JSON.stringify(storedRestaurants));
-
-    res.redirect('/confirm');
-});
-
-app.get('/confirm', function(req, res){
-    res.render('confirm');
-});
-
-app.get('/about', function(req, res){
-    res.render('about');
+// special error handling function
+// to handle server side errors
+app.use(function(error, req, res, next){
+    res.status(500).render('500');
 });
 
 app.listen(6969);
