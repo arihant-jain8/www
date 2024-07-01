@@ -39,7 +39,7 @@ router.post('/posts', async function(req, res){
 
 router.get('/posts/:pId', async function(req, res){
     const pId = req.params.pId;
-    console.log('pID in url: ', pId);
+    // console.log('pID in url: ', pId);
     const query = `SELECT posts.*, authors.name AS author_name, authors.email as author_email
         FROM posts INNER JOIN authors 
         ON posts.author_id = authors.id
