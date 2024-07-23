@@ -1,1 +1,7 @@
 Backend/node_modules/
+AJAX/node_modules/
+Authentication-and-sessions/node_modules
+Security/csrf/attacker-site/node_modules
+Security/csrf/my-site/node_modules
+Security/db-injection/node_modules
+Security/xss/node_modules
