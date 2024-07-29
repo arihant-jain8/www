@@ -5,3 +5,5 @@ Security/csrf/attacker-site/node_modules
 Security/csrf/my-site/node_modules
 Security/db-injection/node_modules
 Security/xss/node_modules
+Good-code/node_modules
+Good-code-Max/node_modules

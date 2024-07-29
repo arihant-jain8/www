@@ -1,0 +1,19 @@
+<%- include('includes/head.ejs', {title: 'Login'}) %>
+</head>
+<body>
+    <%- include('includes/header.ejs') %>
+    <main>
+        <h1>Login</h1>
+        <% if(inputData.hasError){ %>
+            <p><%- inputData.message %></p>
+        <% } %>
+        <form action="/login" method="POST">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="<%= inputData.email %>">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" value="<%= inputData.password %>">
+            <button>Login</button>
+        </form>
+        <a href="/signup">Create User</a>
+    </main>
+</body>

@@ -1,0 +1,29 @@
+{
+  "name": "good-code",
+  "version": "1.0.0",
+  "description": "learning to write good coded",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arihant-jain8/www.git"
+  },
+  "author": "Arihant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arihant-jain8/www/issues"
+  },
+  "homepage": "https://github.com/arihant-jain8/www#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongodb-session": "^5.0.0",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mongodb": "^6.8.0",
+    "nodemon": "^3.1.4"
+  }
+}

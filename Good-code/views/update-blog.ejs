@@ -1,0 +1,17 @@
+<%- include('includes/head.ejs', {title: "Update Post"}) %>
+</head>
+<body>
+    <%- include('includes/header.ejs') %>
+    <main>
+        <% if(inputData.hasError){ %>
+            <p><%- inputData.message %></p>
+        <% } %>
+        <form action="/admin/<%= blog._id %>/edit" method="POST">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" value="<%= blog.title %>">
+            <label for="content">Content</label>
+            <textarea name="content" id="content" cols="30" rows="10"><%= blog.content %></textarea>
+            <button>Save</button>
+        </form>
+    </main>
+</body>

@@ -1,0 +1,23 @@
+<%- include('includes/head.ejs', {title: 'Singup'}) %>
+</head>
+<body>
+    <%- include('includes/header.ejs') %>
+    <main>
+        <h1>Signup</h1>
+        <% if(inputData.hasError){ %>
+            <p><%- inputData.message %></p>
+        <% } %>
+        <form action="/signup" method="POST">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="<%= inputData.email %>">
+            <label for="confirm-email">Confirm Email</label>
+            <input type="email" name="confirm-email" id="confirm-email" value="<%= inputData.confirmEmail %>">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" value="<%= inputData.password %>">
+            <button>Create User</button>
+        </form>
+        <div>
+            <a href="/login">Login instead</a>
+        </div>
+    </main>
+</body>
